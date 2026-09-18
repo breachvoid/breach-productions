@@ -39,4 +39,54 @@
   .knowledge-transfer p{margin-top:18px;font-size:14px}
 }
 @media(max-width:380px){.header .brand{width:110px}}
-\n\n/* 18.09.26 refinement: header scale + knowledge bridge */\n.brand{width:432px}\n.header{height:156px}\n.knowledge-marker{padding-top:0}\n.knowledge-transfer>.tick{margin:0 0 22px 0}\n.knowledge-projects{margin-top:38px;padding-top:30px;border-top:1px solid var(--dark-rule);display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;gap:38px;align-items:start}\n.knowledge-projects h3{font-size:22px;line-height:1.12;letter-spacing:-.02em}\n.knowledge-projects p{margin-top:0;max-width:520px}\n@media(max-width:1050px){.brand{width:330px}.header{gap:28px}.header nav{gap:18px}}\n@media(max-width:700px){.brand,.header .brand{width:330px}.header{height:auto;align-items:flex-start;padding-top:24px;padding-bottom:24px;flex-direction:column}.header nav{width:100%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.knowledge-transfer>.tick{margin-bottom:18px}.knowledge-projects{grid-template-columns:1fr;gap:12px;margin-top:30px;padding-top:25px}}\n@media(max-width:380px){.brand,.header .brand{width:min(330px,100%)}.header{height:auto}.knowledge-projects h3{font-size:20px}}\n
+
+
+/* 18.09.26 refinement */
+/* Header lockup: header-logo.png is a wide master lockup and needs a larger footprint. */
+.brand,
+.header .brand{width:432px}
+.header{min-height:156px;height:auto}
+
+/* Section numbering uses the same restrained grey treatment as 02 / 03. */
+.position .section-id,
+.process .section-heading > .meta,
+.contact > .meta{color:var(--muted)}
+
+/* Knowledge bridge */
+.knowledge-marker{display:none}
+.knowledge-inner{grid-template-columns:1fr 2fr}
+.knowledge-transfer{grid-column:2;max-width:760px}
+.knowledge-transfer>.tick{margin:0 0 22px 0}
+.knowledge-projects{margin-top:38px;padding-top:30px;border-top:1px solid var(--dark-rule);display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;gap:38px;align-items:start}
+.knowledge-projects h3{font-size:22px;line-height:1.12;letter-spacing:-.02em}
+.knowledge-projects p{margin-top:0;max-width:520px}
+
+/* Primary CTA: use BREACH. red as the action, and tie wording to the core proposition. */
+.button{min-height:60px;padding:17px 24px;background:var(--red);color:var(--white);font-size:14px;gap:44px}
+.button:hover{background:var(--white);color:var(--black)}
+
+/* Process belongs to the same charcoal field as the rest of the site. */
+.process{background:var(--charcoal);color:var(--white)}
+.process .steps h3{color:var(--white)}
+.process .steps p{color:#b8b8b8}
+.process .steps .meta{color:var(--red);font-size:15px;line-height:1.35;letter-spacing:.045em}
+
+@media(max-width:1050px){
+  .brand,.header .brand{width:360px}
+  .header{gap:28px}
+  .header nav{gap:18px}
+}
+@media(max-width:700px){
+  .brand,.header .brand{width:min(330px,72vw)}
+  .header{height:auto;min-height:0;align-items:flex-start;padding-top:24px;padding-bottom:24px;flex-direction:column}
+  .header nav{width:100%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .knowledge-inner{grid-template-columns:1fr}
+  .knowledge-transfer{grid-column:1}
+  .knowledge-transfer>.tick{margin-bottom:18px}
+  .knowledge-projects{grid-template-columns:1fr;gap:12px;margin-top:30px;padding-top:25px}
+  .process .steps .meta{font-size:14px}
+}
+@media(max-width:380px){
+  .brand,.header .brand{width:min(300px,100%)}
+  .knowledge-projects h3{font-size:20px}
+}
